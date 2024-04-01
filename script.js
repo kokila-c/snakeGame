@@ -44,24 +44,24 @@ function drawFood() {
   ctx.strokeStyle = "white";
   ctx.strokeRect(food.x, food.y, box, box);
 }
-
+//creates ranom position for food
 function getRandomPosition() {
   return Math.floor(Math.random() * (canvasSize / box)) * box;
 }
 
 function moveSnake() {
-  const head = { x: snake[0].x + dx, y: snake[0].y + dy };
-  snake.unshift(head);
+  const head = { x: snake[0].x + dx, y: snake[0].y + dy }; //  we are only changing values of x and y in accordance to movement
+  snake.unshift(head); // used to make snake look like moving
 
   if (head.x === food.x && head.y === food.y) {
     food = { x: getRandomPosition(), y: getRandomPosition() };
   } else {
-    snake.pop();
+    snake.pop(); // diappears the last box incase the food is not eaten
   }
 }
 
 function checkCollision() {
-  // Check if the snake's head has gone out of bounds
+  // Check if the snake's head has gone out of boundary and reappear on other side
   if (snake[0].x >= canvasSize) {
     snake[0].x = 0;
   } else if (snake[0].x < 0) {
