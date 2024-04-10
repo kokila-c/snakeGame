@@ -1,10 +1,43 @@
+body {
+  background-color: rgb(107, 49, 49);
+}
+
 #gameArea {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
 }
-
+h1,
+h4 {
+  margin-bottom: 150px;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: bisque;
+}
 #gameCanvas {
   border: 3px solid black;
+  background-color: rgb(226, 223, 138);
+}
+
+#gameOverAlert {
+  display: none; /* Hide the alert initially */
+  position: fixed; /* Position it relative to the viewport */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center both horizontally and vertically */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 20px;
+  color: white;
+  font-family: "Press Start 2P", system-ui;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  z-index: 1000; /* Set a high z-index to ensure it appears above other content */
 }
